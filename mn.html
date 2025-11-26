@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>高清荣耀100视频播放器</title>
+  <title>荣耀</title>
   <style>
     html, body {
       margin: 0;
@@ -46,6 +46,10 @@
       padding: 6px;
       font-size: 12px;
       cursor: pointer;
+    }
+    /* 新增隐藏样式 */
+    .hidden-control {
+      display: none;
     }
   </style>
 </head>
@@ -110,6 +114,7 @@
       };
 
       const select = document.createElement("select");
+      select.classList.add("hidden-control"); // 隐藏线路选择器
       sources.forEach((src, i) => {
         const opt = document.createElement("option");
         opt.value = src;
@@ -126,6 +131,7 @@
 
       // 添加画质选择器
       const qualitySelect = document.createElement("select");
+      qualitySelect.classList.add("hidden-control"); // 隐藏画质选择器
       const qualities = [
         {value: "480", text: "标清480P"},
         {value: "720", text: "高清720P"},
